@@ -2,23 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
+        {
+            path:'/',
+            redirect:'/home'
+        },
+        {
+            name:'Home',
+            path:'/home',
+            component:import("../views/home.vue"),
+        }
 
-    {
-        path:'/',
-        name:"Home",
-        component:import("../views/home.vue"),
-        redirect:'',
-        children:[
-            path
-        ],
-
-    }
+     
 
 ]
 
 
 const router = createRouter({
-    history:createWebHistory(),
+    history:createWebHistory(process.env.url),
     routes
 })
 
